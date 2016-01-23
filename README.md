@@ -8,3 +8,4 @@ be presented at the [ISAHP 2016 conference in London](http://www.isahp.org/).
 * Aid the Montessori teacher in assigning jobs to students based upon preferences.
 * Perform an analysis to understand what groups of children prefer which jobs.
 * Create a web application where this information is visible.
+* Create a methodology and software so that other Montessori teachers can use the methods we develop.
