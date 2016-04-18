@@ -77,13 +77,14 @@ preference data, and analyze their results.
 We used the EBM scale, which is a Likert scale with 5 items, based upon
 the research in \citep{matell1971there} for our simplified questionnaire format.
 We also created the SimpleAHP web application as a tool that youth
-could use to analyze their data.
+could use to analyze their data, using the Shiny \citep{shiny} web toolkit
+for the R \citep{R} programming language.
 
 \section{Hypotheses/Objectives}
-Our research has two objectives: first to figure out the job and area
-preferences for our class, and second to simplify the pairwise 
+Our research has three objectives: first to figure out the job and area
+preferences for our class, second to simplify the pairwise 
 questionnaire process for ease of use for young students (although
-the simplification could be used by anyone) and create a tool students
+the simplification could be used by anyone), and third to create a tool students
 could use to analyze this simplified preference data.
 
 
@@ -97,7 +98,8 @@ difficult.  In addition, we wanted to create a process other students could foll
 solve their own problems.   A complex AHP/ANP model would be difficult for younger participants
 as well as those new to AHP/ANP.
 
-We created a new questionnaire format using the EBM scale, and
+We created a new questionnaire format using the EBM scale (see Figure \ref{fig:2}
+for an example), and
 decided upon default values for those votes of 1, 4.5, and 9 respectively.  We decided 
 on the these numerical values for two reasons, first it breaks up the 1-9 scale into two equal
 segments, and secondly for our data it provided for good differentiation.  Additionally we
@@ -131,7 +133,7 @@ comparison choices presented to them.
 %If you are developing an AHP/ANP model, make sure to show the hierarchy or network respectively. Show the judgment matrices or if the model is too big, show sample matrices. Make sure to provide the key indicators (e.g. consistency indices) to ensure your model is valid. Use the graphic to include additional information such as local weights, C.I., etc. Remember the old saying that a good drawing is worth 10,000 words!
 
 \section{Limitations}
-In our particular models for jobs and areas, our pairwise votes are on the Equals, Better, Much Better Scale, which is not as precise as the standard 1-9 scale.  On the other hand, the standard 1-9 scale would have been more complicated than it should have been, especially for untrained students to participate in.
+In our particular models for jobs and areas, our pairwise votes are on the EBM scale, which is not as precise as the standard 1-9 scale.  On the other hand, the standard 1-9 scale would have been more complicated than it should have been, especially for untrained students to participate in.
 (Our SimpleAHP application can accept votes either in the 1-9 scale or the Better, Much Better scale equally easily, so that limitation is not a problem for our application.)
 
 In addition, we did not attempt to do either a full AHP or ANP model with
@@ -143,7 +145,8 @@ not be amenable to this infrastructure.
 %Given the reality of our physical world, no study is perfect. Please, indicate which are those aspects of the study you could not solve satisfactorily and that could weaken the value of your model. What you would different should you have the opportunity to start over? These considerations are important to assess the context of your model validity and also as a way to mentor colleagues interested in this stream of scholarship. 
 
 \section{Conclusions}
-The EBM scale, combined with the simplified questionnaire shown in Appendix 1
+The EBM scale, combined with the simplified questionnaire 
+shown in Figure \ref{fig:2},
 allowed our young voters to easily participate and understand both the 
 questions and the
 problems.  The SimpleAHP web application allowed us to analyze our findings overall, by
@@ -158,13 +161,7 @@ technical details of AHP/ANP theory.
 \bibliographystyle{apalike}
 \bibliography{OurPapers}
 
-\section{Appendix 1}
-\begin{figure}[!hb]
-\caption{Actual Questionnaire Students Filled Out For Areas Decision}
-\includegraphics[height=5in]{SampleAHPQuestionnaire}
-\end{figure}
-
- \section{Appendix 2}
+ \section{Appendix 1}
  Just a closing thought:
 
  \tengwarannataritalic[1.25]
@@ -188,4 +185,13 @@ technical details of AHP/ANP theory.
 %ash nazg thrakatulûk \newline 
 %agh burzum-ishi krimpatul
 %}
+
+\section{Appendix 2}
+\begin{figure}[!hb]
+\caption{Actual Questionnaire Students Filled Out For Areas Decision}
+\includegraphics[height=5in]{SampleAHPQuestionnaire}
+\label{fig:2}
+\end{figure}
+
+
 \end{document}
