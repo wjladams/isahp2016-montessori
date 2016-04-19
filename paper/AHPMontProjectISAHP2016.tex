@@ -1,9 +1,11 @@
 \documentclass[11pt]{article}
 %\documentclass{minimal}
 \usepackage[annataritalic]{tengwarscript}
+\usepackage{framed}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{url}
+\usepackage[all,cmtip]{xy}
 \usepackage{fancyhdr}
 \usepackage{titling}
 \usepackage{soul}
@@ -32,9 +34,9 @@
 In this paper we devise and use a new pairwise comparison questionnaire based upon a
 Liskert scale that enables
 Montessori elementary students to express their preferences for classroom jobs and
-areas of cleaning responsibility.  In addition we developed the SimpleAHP web application
-so that elementary students could analyze the results of their questionnaires on their
-own.  We find that the simplified questionnaire worked well with our students and holds
+areas of cleaning responsibility.  In addition we develop the SimpleAHP web application
+so that elementary students can analyze the results of their questionnaires on their
+own.  We find that the simplified questionnaire works well with our students and holds
 promise to allow more people access to AHP.
 
 
@@ -49,9 +51,13 @@ promise to allow more people access to AHP.
 %and preferences of participants, the overall group and demographic subgroups.
 \end{abstract}
 
+% $$
+% \xymatrix{
+%  & \hbox{\mbox{\emph{Areas Choice Goal}}} \ar[dl] \ar[d]|{\hbox{Alternatives}} \ar[dr] \ar[drr]\\
+% Math & Animals & Library & Kitchen }$$
 
 \section{Introduction}
-Maria Montessori developed a teaching method in the early 1900's that is still popular today (see \citep{montessori2013montessori} for more information).  Part of that method is students are given real responsibilities in their education, such as handling class rule making, discipline issues, and  maintaining their classroom. In our class students are assigned areas of the classroom to clean, and jobs in those areas.
+Maria Montessori developed a teaching method in the early 1900's that is still popular today \citep{montessori2013montessori}.  Part of that method is that students are given real responsibilities in their education, such as handling class rule making, discipline issues, and  maintaining their classroom. In our class students are assigned areas of the classroom to clean, and jobs in those areas.
 
 If we know students preferences for jobs and areas, we could
 try to assign them jobs they enjoy in areas they prefer, which could
@@ -62,10 +68,9 @@ aged 6-12.  We decided to simplify the standard scale to a Likert type
 scale we call the \ul{EBM scale} (meaning \emph{Equals}, 
 \emph{Better}, and \emph{Much Better}) and develop the \ul{SimpleAHP}
 web application to perform the calculations and present the analysis in a
-way that students could navigate and understand.  This research could help our class
-better handle job assignments, and the EBM scale approach and SimpleAHP web
-application could make AHP
-easier for anyone to understand.
+way that students can navigate and understand.  This research could help our class
+better handle job assignments, while the EBM scale approach and SimpleAHP web
+application could make AHP easier for anyone to understand.
 
 
 \section{Literature Review}
@@ -77,7 +82,7 @@ preference data, and analyze their results.
 We used the EBM scale, which is a Likert scale with 5 items, based upon
 the research in \citep{matell1971there} for our simplified questionnaire format.
 We also created the SimpleAHP web application as a tool that youth
-could use to analyze their data, using the Shiny \citep{shiny} web toolkit
+could use to analyze their data, using the Shiny web toolkit \citep{shiny}
 for the R \citep{R} programming language.
 
 \section{Hypotheses/Objectives}
@@ -92,7 +97,8 @@ could use to analyze this simplified preference data.
 
 \section{Research Design/Methodology}
 We decided to do a single goal AHP model, i.e. one pairwise comparison set,
-for the areas and another pairwise comparison set for the jobs.  We did this, in part, because
+for the areas and another pairwise comparison set for the jobs (see Figure
+\ref{fig:hier}).  We did this, in part, because
 leading 6-12 year olds through a complete comparison set for a full AHP model would be
 difficult.  In addition, we wanted to create a process other students could follow to
 solve their own problems.   A complex AHP/ANP model would be difficult for younger participants
@@ -110,10 +116,25 @@ allows one to change their numerical values.
 
 \section{Data/Model Analysis}
 Our model for the jobs as well as the areas decision was a simple pairwise comparison
-amongst the alternatives.  The overall results by gender can be seen in Figure \ref{fig1}
+among the alternatives.  A visualization of the models, with a goal and alternatives
+can be found in Figure \ref{fig:hier}.  
+The overall results by gender can be seen in Figure \ref{fig1}
 and further results are available through the SimpleAHP web application
 at \url{http://tiny.cc/youthAHPOut1} for the areas and
 \url{http://tiny.cc/youthAHPOut2} for the jobs.
+
+\begin{figure}[!hbt]
+\caption{Model Structure For Both Models}
+\begin{framed}
+\begin{minipage}[c]{0.5\textwidth}
+\includegraphics[width=\textwidth]{Picture1}
+\end{minipage}
+\begin{minipage}[c]{0.5\textwidth}
+\includegraphics[width=\textwidth]{Picture2}
+\end{minipage}
+\label{fig:hier}
+\end{framed}
+\end{figure}
 
 There was an interesting piece of work needed to reduce the number of job choices.
 The class actually has approximately 20 distinct jobs across the areas.  Pairwise
@@ -134,7 +155,8 @@ comparison choices presented to them.
 
 \section{Limitations}
 In our particular models for jobs and areas, our pairwise votes are on the EBM scale, which is not as precise as the standard 1-9 scale.  On the other hand, the standard 1-9 scale would have been more complicated than it should have been, especially for untrained students to participate in.
-(Our SimpleAHP application can accept votes either in the 1-9 scale or the Better, Much Better scale equally easily, so that limitation is not a problem for our application.)
+(Our SimpleAHP application can accept votes either in the 1-9 scale or the EBM
+scale equally easily, so that limitation is not a problem for our application.)
 
 In addition, we did not attempt to do either a full AHP or ANP model with
 the students.  We felt this was necessary for two reasons.  First, we did not
@@ -150,7 +172,7 @@ shown in Figure \ref{fig:2},
 allowed our young voters to easily participate and understand both the 
 questions and the
 problems.  The SimpleAHP web application allowed us to analyze our findings overall, by
-individuals and by groups easily.  In addition our process shows promise
+individuals, and by groups easily.  In addition our process shows promise
 to be useful for
 other people who want to answer similar questions, without the need to 
 understand all of the
@@ -166,23 +188,30 @@ technical details of AHP/ANP theory.
 %	Just a closing thought:
 %\end{center} 
  
-\begin{minipage}[t]{0.5\textwidth}
- \tengwarannataritalic[1.09]
- \tengwa{254}
- \Textendedcalma\TTthreedots\Tnuumen\Tessenuquerna\TTthreedots\Tungwe\Tando\Toore\TTrightcurl\Tumbar\Ttinco\TTthreedots\Tlambealt\TTrightcurl\Tquesse\TTdoublerightcurl
- \Tromanperiod\Ts
- \Textendedcalma\TTthreedots\Tnuumen\Tessenuquerna\TTthreedots\Tungwe\Tungwe\Tumbar\TTnasalizer\TTdot\Ttinco\TTthreedots\Tlambe\TTrightcurl
- \tengwa{255}\\
- \Textendedcalma\TTthreedots\Tnuumen\Tessenuquerna\TTthreedots\Tungwe\Tthuule\Troomen\Tquesse\TTthreedots\Ttinco\TTthreedots\Tlambealt\TTrightcurl\Tquesse\TTdoublerightcurl
- \Tromanperiod\Ts
- \Textendedungwe\TTthreedots\Tumbar\Toore\TTrightcurl\Tesse\Tkern{-0.2}\Tmalta\TTrightcurl\Textendedcalma\TTdot\Ttelco\TTdot\Tquesse\Troomen\Tparma\TTnasalizer\TTdot\Ttinco\TTthreedots\Tlambe\TTrightcurl
- \newline
+%\begin{minipage}[t]{0.5\textwidth}
+% \tengwarannataritalic[1.09]
+% \tengwa{254}
+% \Textendedcalma\TTthreedots\Tnuumen\Tessenuquerna\TTthreedots\Tungwe\Tando\Toore\TTrightcurl\Tumbar\Ttinco\TTthreedots\Tlambealt\TTrightcurl\Tquesse\TTdoublerightcurl
+% \Tromanperiod\Ts
+% \Textendedcalma\TTthreedots\Tnuumen\Tessenuquerna\TTthreedots\Tungwe\Tungwe\Tumbar\TTnasalizer\TTdot\Ttinco\TTthreedots\Tlambe\TTrightcurl
+% \tengwa{255}\\
+% \Textendedcalma\TTthreedots\Tnuumen\Tessenuquerna\TTthreedots\Tungwe\Tthuule\Troomen\Tquesse\TTthreedots\Ttinco\TTthreedots\Tlambealt\TTrightcurl\Tquesse\TTdoublerightcurl
+% \Tromanperiod\Ts
+% \Textendedungwe\TTthreedots\Tumbar\Toore\TTrightcurl\Tesse\Tkern{-0.2}\Tmalta\TTrightcurl\Textendedcalma\TTdot\Ttelco\TTdot\Tquesse\Troomen\Tparma\TTnasalizer\TTdot\Ttinco\TTthreedots\Tlambe\TTrightcurl
+% \newline
+%\end{minipage}
+\begin{minipage}[c]{0.6\textwidth}
+\begin{framed}
+\includegraphics[width=\textwidth]{2000px-One_Ring_inscription}
+\end{framed}
 \end{minipage}
-\begin{minipage}[t]{0.5\textwidth}
+\begin{minipage}[c]{0.4\textwidth}
+\begin{framed}
  One ring to rule them all \newline
  One ring to find them \newline
  One ring to bring them all \newline
- And in the darkness bind them
+ And in the darkness bind them 
+\end{framed}
 \end{minipage}
 
 %{\telcontar 
